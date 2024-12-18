@@ -1,0 +1,329 @@
+<html><head><base href="/" />
+<title>Professional Saxophonist</title>
+<style>
+:root {
+  --primary: #2c3e50;
+  --accent: #e74c3c;
+  --light: #ecf0f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--primary);
+  background-color: var(--light);
+}
+
+.header {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.header > div {
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.header h2 {
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(44, 62, 80, 0.9);
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 0 2rem;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: var(--accent);
+}
+
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.saxophone-icon {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.performances {
+  background-color: white;
+}
+
+.performance-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #c0392b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#performances">Performances</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="header" id="home">
+    <div>
+      <h1>John Doe</h1>
+      <h2>Professional Saxophonist</h2>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div>
+        <h2>About Me</h2>
+        <p>With over 15 years of experience, I bring passion and expertise to every performance. Specializing in jazz, classical, and contemporary saxophone, I've performed at venues worldwide and collaborated with renowned artists.</p>
+      </div>
+      <div>
+        <svg class="saxophone-icon" viewBox="0 0 100 100">
+          <path d="M30,70 Q40,60 50,70 T70,70" stroke="var(--accent)" fill="none" stroke-width="2"/>
+          <circle cx="50" cy="65" r="3" fill="var(--accent)"/>
+          <circle cx="60" cy="65" r="3" fill="var(--accent)"/>
+          <circle cx="70" cy="65" r="3" fill="var(--accent)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section performances" id="performances">
+    <h2>Upcoming Performances</h2>
+    <div class="performance-cards" id="performance-list">
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form" id="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+<script>
+const performances = [
+  {
+    date: '2024-01-15',
+    venue: 'Jazz Club Blue Note',
+    location: 'New York, NY',
+    time: '8:00 PM'
+  },
+  {
+    date: '2024-02-01',
+    venue: 'Symphony Hall',
+    location: 'Boston, MA',
+    time: '7:30 PM'
+  },
+  {
+    date: '2024-02-15',
+    venue: 'The Jazz Café',
+    location: 'Chicago, IL',
+    time: '9:00 PM'
+  }
+];
+
+const performanceList = document.getElementById('performance-list');
+
+performances.forEach(performance => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  
+  const date = new Date(performance.date);
+  const formattedDate = date.toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  card.innerHTML = `
+    <h3>${performance.venue}</h3>
+    <p>${formattedDate}</p>
+    <p>${performance.location}</p>
+    <p>${performance.time}</p>
+  `;
+  
+  performanceList.appendChild(card);
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  
+  console.log('Form submitted:', { name, email, message });
+  
+  this.reset();
+  alert('Thank you for your message! I will get back to you soon.');
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.nav');
+  if (window.scrollY > 100) {
+    nav.style.background = 'rgba(44, 62, 80, 1)';
+  } else {
+    nav.style.background = 'rgba(44, 62, 80, 0.9)';
+  }
+});
+</script>
+</body></html>
